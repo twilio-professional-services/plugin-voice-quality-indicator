@@ -1,4 +1,4 @@
-import { default as styled } from "react-emotion";
+import { styled } from "@twilio/flex-ui";
 import { ErrorLevels } from "../../helpers/voiceClientHelper";
 
 const errorLevelToBorderColor = (errorLevel) => {
@@ -20,13 +20,13 @@ export const QualityIndicatorStyles = styled("div")`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-right: 20px;
+  margin-right: 10px;
   border: 1px solid;
   border-color: ${(props) =>
     errorLevelToBorderColor(
       props.disabled ? ErrorLevels.DISABLED : props.errorLevel
     )};
-  borderradius: 5px;
-  padding: 5px;
+  border-radius: 5px;
+  padding: 3px 10px;
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
 `;

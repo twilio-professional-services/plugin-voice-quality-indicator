@@ -58,7 +58,7 @@ export const ErrorLevels = {
 };
 
 export const listenForVoiceClientEvents = (manager) => {
-  manager.voiceClient.on("connect", (connection) => {
+  manager.voiceClient.on("incoming", (connection) => {
     connection.on("sample", (rtcSample) =>
       handleNetworkStatusSample(manager, rtcSample)
     );

@@ -24,15 +24,15 @@ class QualityIndicator extends Component {
   }
 
   render() {
-    const { disabled, theme, networkStatus } = this.props;
+    const { isLiveVoiceCall, theme, networkStatus } = this.props;
     const { inputLevel, outputLevel } = this.state;
     
 
     return (
-      <QualityIndicatorStyles disabled={disabled} errorLevel={networkStatus.errorLevel} >
-        <CustomerPhoneIcon disabled={disabled} themeOverride={theme.MainHeader.Button} outputLevel={outputLevel} />
-        <MuteButtonContainer disabled={disabled} themeOverride={theme.MainHeader.Button} inputLevel={inputLevel}/>
-        <FlexWifiIndicator disabled={disabled} networkStatus={networkStatus} />
+      <QualityIndicatorStyles disabled={!isLiveVoiceCall} errorLevel={networkStatus.errorLevel} >
+        <CustomerPhoneIcon disabled={!isLiveVoiceCall} themeOverride={theme.MainHeader.Button} outputLevel={outputLevel} />
+        <MuteButtonContainer disabled={!isLiveVoiceCall} themeOverride={theme.MainHeader.Button} inputLevel={inputLevel}/>
+        <FlexWifiIndicator disabled={!isLiveVoiceCall} networkStatus={networkStatus} />
       </QualityIndicatorStyles>)
   }
   

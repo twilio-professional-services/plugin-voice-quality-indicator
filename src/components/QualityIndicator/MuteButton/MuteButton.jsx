@@ -8,7 +8,7 @@ class MuteButton extends Component {
   }
 
   render() {
-    const { muted, disabled, className, inputLevel } = this.props;
+    const { muted, disabled, inputLevel } = this.props;
     let icon = "MuteLarge";
     let opacity = 0;
 
@@ -32,7 +32,7 @@ class MuteButton extends Component {
         title={templates.MuteCallTooltip()}
         disabled={disabled}
         style={{ opacity: opacity }}
-        large
+        large="true"
       />
     );
   }

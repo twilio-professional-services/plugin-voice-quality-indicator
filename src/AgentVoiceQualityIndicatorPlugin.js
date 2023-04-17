@@ -24,7 +24,6 @@ export default class AgentVoiceQualityIndicatorPlugin extends FlexPlugin {
     this.registerReducers(manager);
     listenForVoiceClientEvents(manager);
 
-    flex.MainHeader.Content.remove("mute-button");
     flex.MainHeader.Content.add(
       <QualityIndicatorContainer key="quality-indicator" />,
       {
